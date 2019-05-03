@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+
     public static AudioManager instance;
+
+    //musicas
     public AudioClip[] clips;
     public AudioSource musicaBG;
+    //sons
+    public AudioClip[] clipsSons;
+    public AudioSource sonsFX;
+
+
 
     private void Awake()
     {
@@ -39,5 +47,11 @@ public class AudioManager : MonoBehaviour
             musicaBG.clip = GetRandom();
             musicaBG.Play();
         }
+    }
+
+    public void SonsFxTocar(int index)
+    {
+        this.sonsFX.clip = clipsSons[index];
+        this.sonsFX.Play();
     }
 }

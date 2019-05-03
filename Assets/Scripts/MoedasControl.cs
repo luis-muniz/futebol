@@ -9,6 +9,7 @@ public class MoedasControl : MonoBehaviour
         if (collision.gameObject.CompareTag("bola"))
         {
             ScoreManager.instance.ColetaMoedas(10);
+            AudioManager.instance.SonsFxTocar(0);
             Destroy(this.gameObject);
         }
     }

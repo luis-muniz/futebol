@@ -103,6 +103,7 @@ public class Rotacao : MonoBehaviour
     {
         liberaRotacao = false;
         liberarTiro = true;
+        AudioManager.instance.SonsFxTocar(1);
         setaGO.SetActive(false);
     }
 }
