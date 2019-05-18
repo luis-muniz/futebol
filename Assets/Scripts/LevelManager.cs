@@ -19,6 +19,12 @@ public class LevelManager : MonoBehaviour
     public Transform localBotao;
     public List<Level> levelList;
 
+    private void Awake()
+    {
+        Destroy(GameObject.Find("UIManager"));
+        Destroy(GameObject.Find("GameManager"));
+    }
+
     void Start()
     {
         ListaLevelAdd();

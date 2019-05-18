@@ -5,11 +5,11 @@ using UnityEngine;
 public class VidaBomba : MonoBehaviour
 {
 
-    private GameObject bombaRepresentacao;
+    private GameObject barril;
 
     void Start()
     {
-        bombaRepresentacao = GameObject.Find("BombaRepresentacao");
+        barril = GameObject.Find("BarrilExplosao");
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class VidaBomba : MonoBehaviour
     IEnumerator Vida()
     {
         yield return new WaitForSeconds(0.5f);
-        Destroy(bombaRepresentacao.gameObject);
+        Destroy(this.barril.gameObject);
         Destroy(this.gameObject);
     }
 }

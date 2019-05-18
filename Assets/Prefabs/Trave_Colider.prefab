@@ -66,7 +66,7 @@ PolygonCollider2D:
       - {x: 4.5753655, y: -1.4173533}
       - {x: 4.5716696, y: -1.546725}
       - {x: 4.7624636, y: -1.5430406}
-      - {x: 4.76784, y: -1.5406511}
+      - {x: 4.76784, y: -1.5310662}
       - {x: 5.8957353, y: -1.5385872}
       - {x: 6.4332285, y: -2.2628272}
       - {x: 7.538421, y: -3.7144818}
@@ -159,10 +159,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4575214790130565349}
-  - component: {fileID: 4575214790130565348}
+  - component: {fileID: 3951118031545031915}
   m_Layer: 0
   m_Name: GolValido
-  m_TagString: Untagged
+  m_TagString: gol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,8 +181,8 @@ Transform:
   m_Father: {fileID: 4575214789393624815}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &4575214790130565348
-PolygonCollider2D:
+--- !u!61 &3951118031545031915
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -194,7 +194,7 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -1.0605361, y: -0.080343485}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -204,10 +204,6 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -2.0865576, y: 1.5399368}
-      - {x: -2.085671, y: 0.24884905}
-      - {x: -2.0682824, y: -1.7770343}
-      - {x: 2.098897, y: -1.7945554}
-      - {x: -0.3402054, y: 1.5334294}
+  serializedVersion: 2
+  m_Size: {x: 0.5500738, y: 3.3460317}
+  m_EdgeRadius: 0

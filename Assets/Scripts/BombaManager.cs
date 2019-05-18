@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class BombaManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject bomba;
+    private GameObject bombaEfeito;
+
+    private void Awake()
+    {
+        bombaEfeito = GameObject.Find("BombaEfeito"); 
+    }
 
     void Start()
     {
@@ -22,7 +26,8 @@ public class BombaManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("bola"))
         {
-            Instantiate(bomba, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
+            this.gameObject.SetActive(false);
+            Instantiate(bombaEfeito, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
         }
     }
 }

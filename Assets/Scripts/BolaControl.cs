@@ -182,13 +182,13 @@ public class BolaControl : MonoBehaviour
         if(this.gameObject.transform.position.x > this.paredeDir.position.x)
         {
             Destroy(this.gameObject);
-            GameManager.instance.setBolaEmCena(0);
+            GameManager.instance.setBolaEmCena(false);
             GameManager.instance.setBolasNum(1);
         }
         else if(this.gameObject.transform.position.x < this.paredeEsq.position.x)
         {
             Destroy(this.gameObject);
-            GameManager.instance.setBolaEmCena(0);
+            GameManager.instance.setBolaEmCena(false);
             GameManager.instance.setBolasNum(1);
         }
     }
@@ -198,8 +198,13 @@ public class BolaControl : MonoBehaviour
         if (collision.gameObject.CompareTag("armadilha"))
         {
             Destroy(this.gameObject);
-            GameManager.instance.setBolaEmCena(0);
+            GameManager.instance.setBolaEmCena(false);
             GameManager.instance.setBolasNum(1);
+        }
+
+        if (collision.gameObject.CompareTag("gol"))
+        {
+            GameManager.instance.isGoal(true);
         }
     }
 }

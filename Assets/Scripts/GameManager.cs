@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,36 +13,17 @@ public class GameManager : MonoBehaviour
     //bola
     [SerializeField]
     private GameObject bola;
-    private int bolasNum = 3;
-    private bool bolaMorreu = false;
-    private int bolasEmCena = 0;
+    private int bolasNum;
+    private bool isBolasEmCena;
     private Transform pos;
     private bool possuiTiro;
 
-    public void setBolasNum(int bolasNum)
-    {
-        this.bolasNum -= bolasNum;
-    }
+    //
+    //private int cenaAtual;
 
-    public int getBolaEmCena()
-    {
-        return this.bolasEmCena;
-    }
+    private bool goal;
 
-    public void setBolaEmCena(int bolasEmCena)
-    {
-        this.bolasEmCena = bolasEmCena;
-    }
-
-    public bool getPossuiTiro()
-    {
-        return this.possuiTiro;
-    }
-
-    public void setPossuiTiro(bool possuiTiro)
-    {
-        this.possuiTiro = possuiTiro;
-    }
+    private bool jogoComecou;
 
     private void Awake()
     {
@@ -60,29 +42,109 @@ public class GameManager : MonoBehaviour
 
     void Carrega(Scene cena, LoadSceneMode modo)
     {
-        this.pos = GameObject.Find("PosicaoInicialBola").GetComponent<Transform>();
+        if (FasesManager.instance.fase != 4)
+        {
+            this.pos = GameObject.Find("PosicaoInicialBola").GetComponent<Transform>();
+            this.StartGame();
+        }
     }
 
 
     void Start()
     {
+
         ScoreManager.instance.gameStartScoreM();
     }
 
     void Update()
     {
         ScoreManager.instance.UpdateScore();
+
         UIManager.instance.UpdateUI();
+
         this.NascBolas();
+
+        if (this.bolasNum == 0 && !this.goal)
+        {
+            this.GameOver();
+        }
+
+        if (this.goal)
+        {
+            this.WinGame();
+        }
+    }
+
+    private void GameOver()
+    {
+        UIManager.instance.GameOverUI();
+        jogoComecou = false;
+    }
+
+    private void WinGame()
+    {
+        UIManager.instance.WinGameUI();
+        jogoComecou = false;
+
+    }
+
+    private void StartGame()
+    {
+        jogoComecou = true;
+        this.bolasNum = 3;
+        this.goal = false;
+        this.isBolasEmCena = false;
+        UIManager.instance.StartUI();
     }
 
     private void NascBolas()
     {
-        if(this.bolasNum > 0 && bolasEmCena == 0)
+        if(this.bolasNum > 0 && isBolasEmCena == false)
         {
             Instantiate(this.bola, new Vector2(this.pos.position.x, this.pos.position.y), Quaternion.identity);
-            this.bolasEmCena += 1;
+            this.isBolasEmCena = true;
             this.possuiTiro = true;
         }
-    }  
+    }
+
+    //gets e sets
+    public void setBolasNum(int bolasNum)
+    {
+        this.bolasNum -= bolasNum;
+    }
+
+    public int getBolasNum()
+    {
+        return this.bolasNum;
+    }
+
+    public bool getBolaEmCena()
+    {
+        return this.isBolasEmCena;
+    }
+
+    public void setBolaEmCena(bool isBolasEmCena)
+    {
+        this.isBolasEmCena = isBolasEmCena;
+    }
+
+    public bool getPossuiTiro()
+    {
+        return this.possuiTiro;
+    }
+
+    public void setPossuiTiro(bool possuiTiro)
+    {
+        this.possuiTiro = possuiTiro;
+    }
+
+    public bool isGoal()
+    {
+        return this.goal;
+    }
+
+    public void isGoal(bool goal)
+    {
+        this.goal = goal;
+    }
 }

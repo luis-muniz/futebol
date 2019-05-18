@@ -6,7 +6,7 @@ public class ScoreManager : MonoBehaviour
 {
 
     public static ScoreManager instance;
-    public int moedas;
+    private int moedas;
 
 
     private void Awake()
@@ -55,5 +55,10 @@ public class ScoreManager : MonoBehaviour
     public void SalvarMoedas(int coin)
     {
         PlayerPrefs.SetInt("moedasSave", coin);
+    }
+
+    public int getMoedas()
+    {
+        return this.moedas;
     }
 }
