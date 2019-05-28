@@ -21,33 +21,40 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        Destroy(GameObject.Find("UIManager"));
-        Destroy(GameObject.Find("GameManager"));
+        Destroy(GameObject.Find("UIManager(Clone)"));
+        Destroy(GameObject.Find("GameManager(Clone)"));
+        Destroy(GameObject.Find("AudioManager"));
     }
 
     void Start()
     {
         ListaLevelAdd();
     }
-
-    void Update()
-    {
-        
-    }
-
+    
     public void ListaLevelAdd()
     {
         foreach(Level level in levelList)
         {
-            GameObject botaoNovo = Instantiate(botao) as GameObject;
+            GameObject botaoNovo = Instantiate(this.botao) as GameObject;
             BotaoLevel botaoLevelNovo = botaoNovo.GetComponent<BotaoLevel>();
 
             botaoLevelNovo.numeroDaFase.text = level.levelText;
             //botaoLevelNovo.desbloquado = level.desbloqueado;
             //botaoLevelNovo.GetComponent<Button>().interactable = level.habilitado;
 
+            /*
+            if(true){
+                PlayerPrefs.DeleteKey("Fase2");
+                PlayerPrefs.DeleteKey("Fase3");
+                PlayerPrefs.DeleteKey("Fase4");
+               
+            }
+            else
+           // */
+
+            
             if(PlayerPrefs.GetInt("Fase" + botaoLevelNovo.numeroDaFase.text) == 1)
-            {
+            { 
                 level.desbloqueado = 1;
                 level.habilitado = true;
                 level.txtDesbloqueado = true;

@@ -4,30 +4,32 @@ using UnityEngine;
 
 public class BombaManager : MonoBehaviour
 {
+    [SerializeField]
     private GameObject bombaEfeito;
 
-    private void Awake()
+    void Awake()
     {
-        bombaEfeito = GameObject.Find("BombaEfeito"); 
+        bombaEfeito = GameObject.Find("BombaEfeito");
     }
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-            
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("bola"))
         {
-            this.gameObject.SetActive(false);
-            Instantiate(bombaEfeito, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
+            GameObject bombaEfeitoAux = Instantiate(bombaEfeito, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
+            bombaEfeitoAux.GetComponent<Animator>().Play("Explosao");
+            //Destroy(this.gameObject);
+            // this.gameObject.SetActive(false);
+            StartCoroutine(Vida());
+
         }
     }
+
+    IEnumerator Vida()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(this.gameObject);     
+        Destroy(GameObject.Find("BombaEfeito(Clone)")); ;
+    }
+
 }

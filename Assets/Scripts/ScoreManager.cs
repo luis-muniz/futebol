@@ -24,6 +24,7 @@ public class ScoreManager : MonoBehaviour
 
     public void gameStartScoreM()
     {
+        PlayerPrefs.DeleteKey("moedasSave");
         if (PlayerPrefs.HasKey("moedasSave"))
         {
             this.moedas = PlayerPrefs.GetInt("moedasSave");

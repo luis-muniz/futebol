@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
         }
 
         SceneManager.sceneLoaded += Carrega;
+        this.pos = GameObject.Find("PosicaoInicialBola").GetComponent<Transform>();
     }
 
     void Carrega(Scene cena, LoadSceneMode modo)
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-
+        this.StartGame();
         ScoreManager.instance.gameStartScoreM();
     }
 

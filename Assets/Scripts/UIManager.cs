@@ -46,11 +46,17 @@ public class UIManager : MonoBehaviour
        
         SceneManager.sceneLoaded += Carrega;
         this.LigaDesligaPainel();
+        this.PegaDados();
     }
 
 
 
     void Carrega(Scene cena, LoadSceneMode modo)
+    {
+        this.PegaDados();
+    }
+
+    private void PegaDados()
     {
         if (FasesManager.instance.fase != 4)
         {
@@ -58,7 +64,7 @@ public class UIManager : MonoBehaviour
             this.pontosUI = GameObject.Find("PontosUI").GetComponent<Text>();
             this.bolasText = GameObject.Find("BolasText").GetComponent<Text>();
             //paineis
-            this.losePainel = GameObject.Find("PanelLose");            
+            this.losePainel = GameObject.Find("PanelLose");
             this.winPainel = GameObject.Find("PanelWin");
             this.pausePainel = GameObject.Find("PanelPause");
             //botoes de pause
@@ -117,7 +123,10 @@ public class UIManager : MonoBehaviour
 
     public void ProximaFase()
     {
-        SceneManager.LoadScene(FasesManager.instance.fase + 1);
+        if (GameManager.instance.isGoal())
+        {
+            SceneManager.LoadScene(FasesManager.instance.fase + 1);
+        }
     }
 
     //game pause

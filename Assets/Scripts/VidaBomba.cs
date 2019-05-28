@@ -5,15 +5,7 @@ using UnityEngine;
 public class VidaBomba : MonoBehaviour
 {
 
-    private GameObject barril;
-
-    void Start()
-    {
-        barril = GameObject.Find("BarrilExplosao");
-    }
-
-    // Update is called once per frame
-    void Update()
+    public void Aux()
     {
         StartCoroutine(Vida());
     }
@@ -21,7 +13,6 @@ public class VidaBomba : MonoBehaviour
     IEnumerator Vida()
     {
         yield return new WaitForSeconds(0.5f);
-        Destroy(this.barril.gameObject);
         Destroy(this.gameObject);
     }
 }

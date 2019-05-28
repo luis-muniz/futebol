@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4575214789393624815}
   - component: {fileID: 4575214789393624800}
+  - component: {fileID: 6963663326030562945}
   m_Layer: 0
   m_Name: Trave_Colider
   m_TagString: Untagged
@@ -61,16 +62,37 @@ PolygonCollider2D:
     - - {x: 7.0916786, y: -2.970337}
       - {x: 5.968422, y: -1.4708232}
       - {x: 5.948268, y: -1.4480526}
-      - {x: 4.7648764, y: -1.4491577}
-      - {x: 4.7616053, y: -1.4086357}
-      - {x: 4.5753655, y: -1.4173533}
-      - {x: 4.5716696, y: -1.546725}
-      - {x: 4.7624636, y: -1.5430406}
+      - {x: 4.7648764, y: -1.4546906}
+      - {x: 4.5993495, y: -1.4575471}
+      - {x: 4.595507, y: -1.4596516}
+      - {x: 4.5958276, y: -1.5280999}
+      - {x: 4.598305, y: -1.530955}
       - {x: 4.76784, y: -1.5310662}
       - {x: 5.8957353, y: -1.5385872}
       - {x: 6.4332285, y: -2.2628272}
       - {x: 7.538421, y: -3.7144818}
       - {x: 7.614782, y: -3.6524951}
+--- !u!50 &6963663326030562945
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4575214789393624801}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 40.2
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &4575214789642332153
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +216,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.0605361, y: -0.080343485}
+  m_Offset: {x: -1.0605361, y: -0.13594252}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -205,5 +227,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5500738, y: 3.3460317}
+  m_Size: {x: 0.55007386, y: 3.2348337}
   m_EdgeRadius: 0

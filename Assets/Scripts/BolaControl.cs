@@ -18,6 +18,10 @@ public class BolaControl : MonoBehaviour
 
     //
     private Transform paredeDir, paredeEsq;
+    [SerializeField]
+    private GameObject animBola;
+    private bool bolaEmJogo = false;
+    public float teste;
 
     private void Awake()
     {
@@ -28,6 +32,7 @@ public class BolaControl : MonoBehaviour
         this.bolaRigidbody2D = GetComponent<Rigidbody2D>();
         this.paredeDir = GameObject.Find("ParedeRight").GetComponent<Transform>();
         this.paredeEsq = GameObject.Find("ParedeLeft").GetComponent<Transform>();
+        this.animBola = GameObject.Find("BolaMorteAnim");
     }
 
     // Start is called before the first frame update
@@ -51,6 +56,27 @@ public class BolaControl : MonoBehaviour
 
         //
         MatarBola();
+
+        teste = this.bolaRigidbody2D.velocity.magnitude;
+
+        if (this.bolaEmJogo == true)
+        {
+            
+            if (this.bolaRigidbody2D.velocity.magnitude < 0.1f)
+            {
+                StartCoroutine(BolaVida2());
+                bolaEmJogo = false;                
+            }           
+        }
+    }
+
+    IEnumerator BolaVida2()
+    {
+        yield return new WaitForSeconds(2.0f);
+        Instantiate(animBola, transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
+        GameManager.instance.setBolaEmCena(false);
+        GameManager.instance.setBolasNum(1);
     }
 
     //rotacao
@@ -129,7 +155,8 @@ public class BolaControl : MonoBehaviour
         this.setaForcaImage.GetComponent<Image>().enabled = false;
 
         if (GameManager.instance.getPossuiTiro() && this.forcaBola > 0)
-        { 
+        {
+            StartCoroutine(BolaVida());
             liberarTiro =  true;
             this.setaForcaImage.GetComponent<Image>().fillAmount = 0;
 
@@ -137,6 +164,12 @@ public class BolaControl : MonoBehaviour
             GameManager.instance.setPossuiTiro(false);
         }
        
+    }
+
+    IEnumerator BolaVida()
+    {
+        yield return new WaitForSeconds(0.5f);
+        this.bolaEmJogo = true;
     }
 
     //forca
@@ -197,6 +230,7 @@ public class BolaControl : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("armadilha"))
         {
+            Instantiate(animBola, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             GameManager.instance.setBolaEmCena(false);
             GameManager.instance.setBolasNum(1);
@@ -205,6 +239,7 @@ public class BolaControl : MonoBehaviour
         if (collision.gameObject.CompareTag("gol"))
         {
             GameManager.instance.isGoal(true);
+            PlayerPrefs.SetInt("Fase" +  (FasesManager.instance.fase + 2), 1);
         }
     }
 }
