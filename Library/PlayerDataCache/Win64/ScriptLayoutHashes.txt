@@ -1,8 +1,12 @@
 Win64
 PlayerPath?
-C:/Users/Luis Fernando/Desktop/Futebol.exe
+C:/Users/Luis Fernando/Desktop/JOGO/Futebol.exe
 SceneListBegin?
 Assets/Scenes/Fase1.unity
+Assets/Scenes/Fase2.unity
+Assets/Scenes/Fase3.unity
+Assets/Scenes/Fase4.unity
+Assets/Scenes/Fases.unity
 SceneListEnd?
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 01aa15e337e3a9c62f15153dfac6d589 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
@@ -19,7 +23,6 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.G
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 9c24acc54130c713a29a95053c1eb2bb Assembly-CSharp.dll:.BotaoLevel
-adea8bddfb3e403c8cfc415ab0c405f4 Assembly-CSharp.dll:.Forca
 e7a73f5f78ba6445195ec23b74a1ce2d Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventHandler
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.Editor.dll:UnityEngine.Advertisements.Editor.Placeholder
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
@@ -117,14 +120,16 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
-43ab061ac181ad909837bf63b6c8fca2 Assembly-CSharp.dll:.ScoreManager
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ScoreManager
 94017dcc9f00fe671ea7dc427b4da011 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.TesteLoadCena
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 2c1176f22b9fbe46f09885e3f5f114be Assembly-CSharp.dll:.AudioManager
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.CameraMove
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.MorteBola
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
-7a4e5fc5f652a2e7ae903ffb6507411f Assembly-CSharp.dll:.BombaManager
+74fe56c793dc0d4bb3fd1982593c1a1e Assembly-CSharp.dll:.BombaManager
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -163,11 +168,12 @@ a4f0a4f62100f1a4fb5cbe0e00dde83f Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 5fc094978ce3e3591a7500ed380d854a Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.MoedasControl
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+62ef1a0069cbf3ba02f78ea8d98779e7 Assembly-CSharp.dll:.FasesManager
 019e6c85552834ff783da952123c7ef1 Assembly-CSharp.dll:.EspetosManager
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
-250c76a98042daaa40bd21b4c6bb2799 Assembly-CSharp.dll:.Rotacao
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.GameManager
+8f3f8c1d2a86680bc66c6576b0c40d3c Assembly-CSharp.dll:.GameManager
 89e57003654c14e742b45b1d5e46a064 Assembly-CSharp.dll:.UIManager
+f677a40f0e4071a5babe7923fc977c2e Assembly-CSharp.dll:.BolaControl

@@ -125,7 +125,13 @@ public class UIManager : MonoBehaviour
     {
         if (GameManager.instance.isGoal())
         {
-            SceneManager.LoadScene(FasesManager.instance.fase + 1);
+            if (FasesManager.instance.fase == 3)
+            {
+                SceneManager.LoadScene(4);
+            }
+            else {
+                SceneManager.LoadScene(FasesManager.instance.fase + 1);
+            }
         }
     }
 

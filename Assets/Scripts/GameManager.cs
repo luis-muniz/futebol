@@ -100,11 +100,23 @@ public class GameManager : MonoBehaviour
 
     private void NascBolas()
     {
-        if(this.bolasNum > 0 && isBolasEmCena == false)
+        if (FasesManager.instance.fase >= 3)
         {
-            Instantiate(this.bola, new Vector2(this.pos.position.x, this.pos.position.y), Quaternion.identity);
-            this.isBolasEmCena = true;
-            this.possuiTiro = true;
+            if (this.bolasNum > 0 && this.isBolasEmCena == false && Camera.main.transform.position.x <= 6.5f)
+            {
+                Instantiate(this.bola, new Vector2(this.pos.position.x,this.pos.position.y),Quaternion.identity);
+                this.isBolasEmCena = true;
+                this.possuiTiro = true;
+            }
+
+        }
+        else {
+            if (this.bolasNum > 0 && isBolasEmCena == false)
+            {
+                Instantiate(this.bola, new Vector2(this.pos.position.x, this.pos.position.y), Quaternion.identity);
+                this.isBolasEmCena = true;
+                this.possuiTiro = true;
+            }
         }
     }
 
@@ -147,5 +159,10 @@ public class GameManager : MonoBehaviour
     public void isGoal(bool goal)
     {
         this.goal = goal;
+    }
+
+    public bool isJogoComecou()
+    {
+        return this.jogoComecou;
     }
 }

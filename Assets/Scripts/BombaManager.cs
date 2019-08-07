@@ -16,6 +16,7 @@ public class BombaManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("bola"))
         {
+            AudioManager.instance.SonsFxTocar(2);
             GameObject bombaEfeitoAux = Instantiate(bombaEfeito, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
             bombaEfeitoAux.GetComponent<Animator>().Play("Explosao");
             //Destroy(this.gameObject);

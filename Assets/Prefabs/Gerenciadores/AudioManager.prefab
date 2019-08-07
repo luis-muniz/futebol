@@ -52,6 +52,7 @@ MonoBehaviour:
   clipsSons:
   - {fileID: 8300000, guid: 5b36c5660e0e3084181c03fba6d74aea, type: 3}
   - {fileID: 8300000, guid: 4fab39fa85cbad8409271e4a479e8174, type: 3}
+  - {fileID: 8300000, guid: 29aefd2cff768a842b3a4c513f3b0090, type: 3}
   sonsFX: {fileID: 4521080703239584614}
 --- !u!82 &4521080703239584613
 AudioSource:

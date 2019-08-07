@@ -64,10 +64,15 @@
     <Compile Include="Assets\Scripts\BolaControl.cs" />
     <Compile Include="Assets\Scripts\BombaManager.cs" />
     <Compile Include="Assets\Scripts\BotaoLevel.cs" />
+    <Compile Include="Assets\Scripts\CameraMove.cs" />
     <Compile Include="Assets\Scripts\EspetosManager.cs" />
     <Compile Include="Assets\Scripts\FasesManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\Loja\BolaItem.cs" />
+    <Compile Include="Assets\Scripts\Loja\BolasShop.cs" />
+    <Compile Include="Assets\Scripts\Loja\BolaSuporte.cs" />
+    <Compile Include="Assets\Scripts\Loja\ComprarBola.cs" />
     <Compile Include="Assets\Scripts\MoedasControl.cs" />
     <Compile Include="Assets\Scripts\MorteBola.cs" />
     <Compile Include="Assets\Scripts\ScoreManager.cs" />
